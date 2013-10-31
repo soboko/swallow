@@ -4,16 +4,16 @@ import org.slf4j.LoggerFactory;
 import com.wolfram.alpha.*;
 
 public class Swallow {
-    private static Logger logger = LoggerFactory.getLogger(Swallow.class);
+    private static final Logger logger = LoggerFactory.getLogger(Swallow.class);
 
     // TODO add your own API key here
-    private static String appid = "APIKEY";
+    private static final String APIKEY = "APIKEY";
 
     public int determineSpeedMph() throws WAException {
         String input = "What is the average airspeed velocity of an unladen swallow?";
 
         WAEngine engine = new WAEngine();
-        engine.setAppID(appid);
+        engine.setAppID(APIKEY);
         engine.addFormat("plaintext");
 
         // Create the query.
